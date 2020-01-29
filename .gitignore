@@ -1,0 +1,6 @@
+/wp-content/cache/
+/wp-content/ai1wm-backups/
+/wp/content/uploads/
+
+*.wpress
+/.idea
