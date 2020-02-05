@@ -11,6 +11,5 @@
  * @var bool
  */
 define( 'WP_USE_THEMES', true );
-define("IS_SITE_LANG_EN", $_COOKIE["wp-wpml_current_language"] == "ru" ? false : true);
 /** Loads the WordPress Environment and Template */
 require( dirname( __FILE__ ) . '/wp-blog-header.php' );

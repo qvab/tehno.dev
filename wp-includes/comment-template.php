@@ -2357,6 +2357,9 @@ function comment_form( $args = array(), $post_id = null ) {
 	 */
 	$fields = apply_filters( 'comment_form_default_fields', $fields );
 
+	// todo mishanin correction
+	unset($fields["email"], $fields["url"]);
+
 	$defaults = array(
 		'fields'               => $fields,
 		'comment_field'        => sprintf(
@@ -2412,7 +2415,7 @@ function comment_form( $args = array(), $post_id = null ) {
 		'cancel_reply_before'  => ' <small>',
 		'cancel_reply_after'   => '</small>',
 		'cancel_reply_link'    => __( 'Cancel reply' ),
-		'label_submit'         => __( 'Post Comment' ),
+		'label_submit'         => __( 'Post Comment 22' ),
 		'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
 		'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
 		'format'               => 'xhtml',
@@ -2427,8 +2430,11 @@ function comment_form( $args = array(), $post_id = null ) {
 	 *
 	 * @param array $defaults The default comment form arguments.
 	 */
-	$args = wp_parse_args( $args, apply_filters( 'comment_form_defaults', $defaults ) );
 
+	$args = wp_parse_args( $args, apply_filters( 'comment_form_defaults', $defaults ) );
+	// todo mishanin corerction
+  $args["label_submit"] = empty(IS_SITE_LANG_EN) ? "Отправить комментарий" : 'Post Comment';
+  $args["title_reply"] = empty(IS_SITE_LANG_EN) ? "Оставьте комментарий" : $args["title_reply"];
 	// Ensure that the filtered args contain all required default values.
 	$args = array_merge( $defaults, $args );
 
@@ -2440,7 +2446,13 @@ function comment_form( $args = array(), $post_id = null ) {
 			$args['fields']['email']
 		);
 	}
+  // todo mishanin corerction
+  if (empty(IS_SITE_LANG_EN)) {
+    $args["fields"]["author"] = str_replace('Name', "Ваше имя", $args["fields"]["author"]);
+  }
 
+
+	//print_r($args["fields"]);
 	/**
 	 * Fires before the comment form.
 	 *

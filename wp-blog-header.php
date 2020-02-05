@@ -11,7 +11,7 @@ if ( ! isset( $wp_did_header ) ) {
 
 	// Load the WordPress library.
 	require_once( dirname( __FILE__ ) . '/wp-load.php' );
-
+  define("IS_SITE_LANG_EN", $_COOKIE["wp-wpml_current_language"] == "ru" ? false : true);
 	// Set up the WordPress query.
 	wp();
 
