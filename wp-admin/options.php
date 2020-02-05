@@ -83,6 +83,8 @@ if ( is_multisite() && ! current_user_can( 'manage_network_options' ) && 'update
 $whitelist_options            = array(
 	'general'    => array(
 		'blogname',
+		'blogh1en',
+		'blogh1ru',
 		'blogdescription',
 		'gmt_offset',
 		'date_format',

@@ -66,6 +66,16 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 </tr>
 
 <tr>
+<th scope="row"><label for="blogh1en">H1 для EN версии</label></th>
+<td><input name="blogh1en" type="text" id="blogh1en" value="<?php form_option( 'blogh1en' ); ?>" class="regular-text" /></td>
+</tr>
+
+<tr>
+<th scope="row"><label for="blogh1ru">H1 для RU версии</label></th>
+<td><input name="blogh1ru" type="text" id="blogh1ru" value="<?php form_option( 'blogh1ru' ); ?>" class="regular-text" /></td>
+</tr>
+
+<tr>
 <th scope="row"><label for="blogdescription"><?php _e( 'Tagline' ); ?></label></th>
 <td><input name="blogdescription" type="text" id="blogdescription" aria-describedby="tagline-description" value="<?php form_option( 'blogdescription' ); ?>" class="regular-text" />
 <p class="description" id="tagline-description"><?php _e( 'In a few words, explain what this site is about.' ); ?></p></td>
