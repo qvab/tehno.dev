@@ -7,6 +7,13 @@
 
 require( ABSPATH . WPINC . '/option.php' );
 
+
+
+add_filter('the_content', 'my_filter_function');
+function my_filter_function($content){
+  return $content."<!-- mishanin test -->";
+}
+
 /**
  * Convert given MySQL date string into a different format.
  *

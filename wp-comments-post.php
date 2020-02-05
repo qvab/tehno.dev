@@ -4,7 +4,7 @@
  *
  * @package WordPress
  */
-
+session_start();
 if ( 'POST' != $_SERVER['REQUEST_METHOD'] ) {
 	$protocol = $_SERVER['SERVER_PROTOCOL'];
 	if ( ! in_array( $protocol, array( 'HTTP/1.1', 'HTTP/2', 'HTTP/2.0' ) ) ) {
@@ -15,6 +15,15 @@ if ( 'POST' != $_SERVER['REQUEST_METHOD'] ) {
 	header( "$protocol 405 Method Not Allowed" );
 	header( 'Content-Type: text/plain' );
 	exit;
+}
+
+
+if (empty($_POST["captcha"])) {
+  echo "Вы не ввели код с картинки!";
+  exit();
+} elseif ($_SESSION["captcha_mishanin"] != mb_strtolower($_POST["captcha"])) {
+  echo "Код с картинки введен не верно!";
+  exit();
 }
 
 /** Sets up the WordPress Environment. */

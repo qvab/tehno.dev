@@ -61,248 +61,35 @@ do_action( 'generate_after_footer' );
 wp_footer();
 ?>
 <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(47590078, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47590078" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+<?php
+// todo by mishanin: убираем вывод яндекс макрета для англ версии и главной странице
+if (empty(IS_SITE_LANG_EN) && empty(is_home())) { ?>
 <script type="text/javascript">
     (function (w) {
         function start() {
             w.removeEventListener("YaMarketAffiliateLoad", start);
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget1',
-                type: 'offers',
-                params: {
+            for (var i = 1; i < 21; i++) {
+              if (jQuery('#marketWidget' + i).length > 0) {
+                w.YaMarketAffiliate.createWidget({
+                  containerId: 'marketWidget' + i,
+                  type: 'offers',
+                  params: {
                     clid: 2356248,
-                    themeId: 10, 
-                    searchSelector: "#marketWidget1>s",
+                    themeId: 10,
+                    searchSelector: "#marketWidget" + i +">s",
                     searchMatch: 'exact',
                     searchCount: 4,
                     vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget2',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget2>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget3',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget3>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget4',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget4>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget5',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget5>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget6',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget6>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget7',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget7>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget8',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget8>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget9',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget9>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget10',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget10>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget11',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget11>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget12',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget12>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget13',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget13>s",
-                    searchMatch: 'exact',
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget14',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget14>s",
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget15',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget15>s",
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget16',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget16>s",
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget17',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget17>s",
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget18',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget18>s",
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget19',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget19>s",
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
-            w.YaMarketAffiliate.createWidget({
-                containerId: 'marketWidget20',
-                type: 'offers',
-                params: {
-                    clid: 2356248,
-                    themeId: 10,
-                    searchSelector: "#marketWidget20>s",
-                    searchCount: 4,
-                    vid: 3
-                }
-            });
+                  }
+                });
+              }
+            }
         }
         w.YaMarketAffiliate
             ? start()
             : w.addEventListener("YaMarketAffiliateLoad", start);
     })(window);
 </script>
+<?php } ?>
 </body>
 </html>

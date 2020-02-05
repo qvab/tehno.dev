@@ -2415,7 +2415,7 @@ function comment_form( $args = array(), $post_id = null ) {
 		'cancel_reply_before'  => ' <small>',
 		'cancel_reply_after'   => '</small>',
 		'cancel_reply_link'    => __( 'Cancel reply' ),
-		'label_submit'         => __( 'Post Comment 22' ),
+		'label_submit'         => __( 'Post Comment' ),
 		'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
 		'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
 		'format'               => 'xhtml',
@@ -2451,8 +2451,7 @@ function comment_form( $args = array(), $post_id = null ) {
     $args["fields"]["author"] = str_replace('Name', "Ваше имя", $args["fields"]["author"]);
   }
 
-
-	//print_r($args["fields"]);
+  $args["fields"]["captha"] = '<div class="captcha-mishanin"><img src="/wp-includes/mishanin/captcha/get.php?'.time().'" alt="captcha" /></div><input placeholder="'. (empty(IS_SITE_LANG_EN) ? "Ввидет код с картинки *" : "Enter captcha *").'" id="captcha" name="captcha" type="text" value="" size="30">';
 	/**
 	 * Fires before the comment form.
 	 *

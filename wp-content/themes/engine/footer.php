@@ -126,36 +126,6 @@ if(!(it_get_setting('footer_disable') && it_get_setting('subfooter_disable'))) {
 
 <?php do_action('it_body_end'); ?>
 <?php wp_footer(); ?>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter47590078 = new Ya.Metrika2({
-                    id:47590078,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
-                });
-            } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/tag.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks2");
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/47590078" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 <!-- Rating@Mail.ru counter -->
 <script type="text/javascript">
 var _tmr = window._tmr || (window._tmr = []);
@@ -174,7 +144,7 @@ _tmr.push({id: "3082096", type: "pageView", start: (new Date()).getTime()});
 
 <script type='text/javascript' src='https://tehno.guru/wp-content/themes/engine/js/scrl.js'></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script type="text/javascript">
+<script type="text/javascript" async>
   (function (w) {
     function start() {
       w.removeEventListener("YaMarketAffiliateLoad", start);
@@ -416,7 +386,36 @@ w.YaMarketAffiliate.createWidget({
       ? start()
       : w.addEventListener("YaMarketAffiliateLoad", start);
   })(window);
-</script>  
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" async>
+  (function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+      try {
+        w.yaCounter47590078 = new Ya.Metrika2({
+          id:47590078,
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:true
+        });
+      } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+      s = d.createElement("script"),
+      f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+    if (w.opera == "[object Opera]") {
+      d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+  })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/47590078" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 
 </html>
