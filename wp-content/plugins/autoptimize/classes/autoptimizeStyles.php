@@ -496,7 +496,7 @@ class autoptimizeStyles extends autoptimizeBase {
         }
         
         // Inject the new stylesheets
-        $replaceTag = array("<title","before");
+        $replaceTag = array('<div class="main-script">',"before"); // todo mishanin by меняем место css
         $replaceTag = apply_filters( 'autoptimize_filter_css_replacetag', $replaceTag, $this->content );
 
         if ($this->inline == true) {
@@ -548,7 +548,7 @@ class autoptimizeStyles extends autoptimizeBase {
                     
                 } else {
                     if (strlen($this->csscode[$media]) > $this->cssinlinesize) {
-                        $this->inject_in_html('<link type="text/css" media="'.$media.'" href="'.$url.'" rel="stylesheet" />',$replaceTag);
+                        $this->inject_in_html('<link type="text/css" class="autoopti_1" media="'.$media.'" href="'.$url.'" rel="stylesheet" />',$replaceTag);
                     } else if (strlen($this->csscode[$media])>0) {
                         $this->inject_in_html('<style type="text/css" media="'.$media.'">'.$this->csscode[$media].'</style>',$replaceTag);
                     }

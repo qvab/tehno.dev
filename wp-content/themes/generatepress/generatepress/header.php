@@ -15,8 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
-    <script async src="https://aflt.market.yandex.ru/widget/script/api" type="text/javascript"></script>
-    <script async src="https://cse.google.com/cse.js?cx=003064882461470848978:t0r0skrwadg"></script>
+ <?php /* <link rel="preload" as="style" href="/static/fonts.css" />
+  <link rel="preload" as="font" href="/PFBeauSansProRegular.woff2-n" />
+  <link rel="stylesheet" href="/static/fonts.css" />*/ ?>
+
 </head>
 
 <body <?php body_class(); ?> <?php generate_do_microdata( 'body' ); ?>>
