@@ -1,4 +1,5 @@
 <?php
+
 namespace MIWR;
 $q = "/best-cordless-hot-glue-guns/";
 //$q = "https://tehno.guru/best-angle-grinders/";
@@ -62,4 +63,3 @@ if (!file_exists($MW_CACHE->pathCache . "/" . $sTotalCacheFile)) {
     include_once $MW_CACHE->pathCache . "/" . $sTotalCacheFile;
   }
 }
-echo "this is curl";
