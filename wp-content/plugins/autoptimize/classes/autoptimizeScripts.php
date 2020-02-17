@@ -310,7 +310,7 @@ class autoptimizeScripts extends autoptimizeBase {
             $replaceTag=array("</head>","before");
             $defer="";
         } else {
-            $replaceTag=array("</body>","before");
+            $replaceTag=array('<div class="main-script">',"before");
             $defer="defer ";
         }
         

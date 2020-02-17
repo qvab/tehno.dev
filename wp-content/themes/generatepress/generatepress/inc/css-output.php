@@ -748,17 +748,7 @@ function generate_do_icon_css() {
 	if ( 'font' === generate_get_option( 'icons' ) ) {
 		$url = trailingslashit( get_template_directory_uri() );
 
-		$output = '@font-face {
-			font-family: "GeneratePress";
-			src:  url("' . $url . 'fonts/generatepress.eot");
-			src:  url("' . $url . 'fonts/generatepress.eot#iefix") format("embedded-opentype"),
-				  url("' . $url . 'fonts/generatepress.woff2") format("woff2"),
-				  url("' . $url . 'fonts/generatepress.woff") format("woff"),
-				  url("' . $url . 'fonts/generatepress.ttf") format("truetype"),
-				  url("' . $url . 'fonts/generatepress.svg#GeneratePress") format("svg");
-			font-weight: normal;
-			font-style: normal;
-		}';
+		$output = '';
 
 		if ( defined( 'GENERATE_MENU_PLUS_VERSION' ) ) {
 			$output .= '.main-navigation .slideout-toggle a:before,

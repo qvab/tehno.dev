@@ -24,10 +24,10 @@ body {background:#F0F0F0;font-family:'Rajdhani',sans-serif}
 /*************************************************
 general fonts
 *************************************************/
-@font-face{font-display: fallback;font-family: 'pfbeausanspro-thin';src: url('/wp-content/themes/engine/fonts/pfbeausanspro-thin.ttf');}
-@font-face{font-display: fallback;font-family: 'pfbeausanspro-light';src: url('/wp-content/themes/engine/fonts/pfbeausanspro-light.ttf');}
-@font-face{font-display: fallback;font-family: 'pfbeausanspro-bold';src: url('/wp-content/themes/engine/fonts/pfbeausanspro-bold.ttf');}
-@font-face{font-display: fallback;font-family: 'PFBeauSansProRegular';src: url('/wp-content/themes/engine/fonts/PFBeauSansProRegular.ttf');}
+@font-face{font-display: fallback;font-family: 'pfbeausanspro-thin';src: url('/pfbeausanspro-thin.ttf-n');}
+@font-face{font-display: fallback;font-family: 'pfbeausanspro-light';src: url('/pfbeausanspro-light.ttf-n');}
+@font-face{font-display: fallback;font-family: 'pfbeausanspro-bold';src: url('/pfbeausanspro-bold-n.ttf-n');}
+@font-face{font-display: fallback;font-family: 'PFBeauSansProRegular';src: url('/PFBeauSansProRegular.ttf-n');}
 .rajdhani_300{font-family:'Rajdhani',sans-serif;font-weight:300}
 .rajdhani_500{font-family:'Rajdhani',sans-serif;font-weight:500}
 .rajdhani_700{font-family:'Rajdhani',sans-serif;font-weight:700}

@@ -63,7 +63,7 @@ GeneratePress is based on Underscores http://underscores.me/, (C) 2012-2019 Auto
 @font-face{font-display: fallback;font-family: 'pfbeausanspro-thin';src: url('/wp-content/themes/engine/fonts/pfbeausanspro-thin.ttf');}
 @font-face{font-display: fallback;font-family: 'pfbeausanspro-light';src: url('/wp-content/themes/engine/fonts/pfbeausanspro-light.ttf');}
 @font-face{font-display: fallback;font-family: 'pfbeausanspro-bold';src: url('/wp-content/themes/engine/fonts/pfbeausanspro-bold.ttf');}
-@font-face{font-display: fallback;font-family: 'PFBeauSansProRegular';src: url('/wp-content/themes/engine/fonts/PFBeauSansProRegular.ttf');}
+@font-face{font-display: fallback;font-family: 'PFBeauSansProRegular';src: url('/sdPFBeauSansProRegular.ttf');}
 .rajdhani_300{font-family:'Rajdhani',sans-serif;font-weight:300}
 .rajdhani_500{font-family:'Rajdhani',sans-serif;font-weight:500}
 .rajdhani_700{font-family:'Rajdhani',sans-serif;font-weight:700}

@@ -134,7 +134,7 @@ if ( ! function_exists( 'generate_construct_logo' ) ) {
 		echo apply_filters( 'generate_logo_output', sprintf( // WPCS: XSS ok, sanitization ok.
 			'<div class="site-logo">
 				<a href="%1$s" title="%2$s" rel="home">
-					<img %3$s />
+					<img %3$s style="width: 192px; height: 70px; !important;" />
 				</a>
 			</div>',
 			esc_url( apply_filters( 'generate_logo_href' , home_url( '/' ) ) ),
