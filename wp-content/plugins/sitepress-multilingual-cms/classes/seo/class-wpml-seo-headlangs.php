@@ -62,13 +62,18 @@ class WPML_SEO_HeadLangs {
 					$hreflang_items[ $hreflang_code ] = str_replace( '&amp;', '&', $alternate_hreflang );
 				}
 			}
+
 			$hreflang_items = apply_filters( 'wpml_hreflangs', $hreflang_items );
 
 			$hreflang = '';
+
 			if ( is_array( $hreflang_items ) ) {
 				foreach ( $hreflang_items as $hreflang_code => $hreflang_url ) {
 					$hreflang .= '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '" />' . PHP_EOL;
 				}
+				if (is_category()) {
+          $hreflang = '';
+        }
 				echo apply_filters( 'wpml_hreflangs_html', $hreflang );
 			}
 		}

@@ -871,8 +871,16 @@ class WPSEO_Frontend {
 			return $canonical;
 		}
 
+		// mishanin correction
+    $canonical = explode("/", $canonical);
+    foreach ($canonical as $k => $v) {
+      if (($v == "page" || is_numeric($v)) && !empty($v)) {
+        unset($canonical[$k]);
+      }
+    }
+    $canonical = implode("/", $canonical);
 		if ( is_string( $canonical ) && '' !== $canonical ) {
-			echo '<link rel="canonical" href="' . esc_url( $canonical, null, 'other' ) . '" />' . "\n";
+			echo '<link rel="canonical" class="mishanin" href="' . esc_url( $canonical, null, 'other' ) . '" />' . "\n";
 		}
 	}
 

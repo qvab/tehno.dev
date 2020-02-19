@@ -3986,7 +3986,7 @@ function ampforwp_rel_canonical_paginated_post(){
 				$new_canonical_url = $new_canonical_url.$post_paginated_page;
 			}
 			?>
-			<link rel="canonical" href="<?php echo esc_url($new_canonical_url) ?>/" /><?php  } 
+			<link rel="canonical" href="<?php echo esc_url($new_canonical_url) ?>/" /><?php  }
 }
 add_action('ampforwp_after_post_content','ampforwp_post_pagination');
 
@@ -4063,11 +4063,20 @@ function ampforwp_rel_canonical_home_archive(){
 	if ( is_home() || is_front_page() || (is_archive() && ampforwp_get_setting('ampforwp-archive-support')) )	{
 		$current_archive_url = home_url( $wp->request );
 		$amp_url 	= trailingslashit($current_archive_url);
+
 		$amp_url = explode('/', $amp_url);
+    foreach ($amp_url as $k => $v) {
+      if (($v == "page" || is_numeric($v)) && !empty($v)) {
+        unset($amp_url[$k]);
+      }
+    }
 		$amp_url = array_flip($amp_url);
 		if(isset($amp_url['amp'])){
 			unset($amp_url['amp']);
 		}
+
+
+
 		$amp_url = array_flip($amp_url);
 		$amp_url  = implode('/', $amp_url);	
 	  	$query_arg_array = $wp->query_vars;
@@ -4076,7 +4085,9 @@ function ampforwp_rel_canonical_home_archive(){
 	  	}
 	  	if ( $page >= '2') { 
 			$amp_url = trailingslashit( $amp_url  . '?page=' . $page);
-		} ?>
+		}
+    // mishanin correction
+		?>
 		<link rel="canonical" href="<?php echo user_trailingslashit( esc_url( apply_filters('ampforwp_modify_rel_url', $amp_url ) ) ) ?>">
 	<?php }
 
