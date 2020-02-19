@@ -754,8 +754,9 @@ class PgCache_Environment {
 
 			$rules .= "    RewriteCond \"" . $document_root . $uri_prefix . $ext .
 				$env_W3TC_ENC . "\"" . $switch . "\n";
-			$rules .= "    RewriteRule .* \"" . $uri_prefix . $ext .
-				$env_W3TC_ENC . "\" [L]\n";
+			/*$rules .= "    RewriteRule .* \"" . $uri_prefix . $ext .
+				$env_W3TC_ENC . "\" [L]\n";*/
+      $rules .= "    RewriteRule .* \"/static/system.cache/curl.php?q=%{REQUEST_URI}\" [L]\n"; // todo mishanin correction total cache
 		}
 
 		$rules .= "</IfModule>\n";

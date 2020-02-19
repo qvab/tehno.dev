@@ -10,11 +10,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 RewriteEngine On
 RewriteBase /
 
-
 # fonts rewrite path
-
-
-
 RewriteRule (.*\.(ttf|woff|woff2|eot|otf|svg|css))\-n$ /static/$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -192,7 +188,6 @@ RewriteRule ^/(.*)/attachment/(.*)/$ /$1/attachment/$2 [R=301,L]
     RewriteCond %{REQUEST_URI} \/$
     RewriteCond "%{DOCUMENT_ROOT}/wp-content/cache/page_enhanced/%{HTTP_HOST}/%{REQUEST_URI}/_index%{ENV:W3TC_SSL}%{ENV:W3TC_PREVIEW}.html%{ENV:W3TC_ENC}" -f
     #RewriteRule .* "/wp-content/cache/page_enhanced/%{HTTP_HOST}/%{REQUEST_URI}/_index%{ENV:W3TC_SSL}%{ENV:W3TC_PREVIEW}.html%{ENV:W3TC_ENC}" [L]
-
     RewriteRule .* "/static/system.cache/curl.php?q=%{REQUEST_URI}" [L]
 
 </IfModule>

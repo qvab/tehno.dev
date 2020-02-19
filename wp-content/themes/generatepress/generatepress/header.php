@@ -62,8 +62,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div id="page" class="hfeed site grid-container container grid-parent">
 		<div id="content" class="site-content">
+      <?php if (!empty(is_home())) { ?>
       <h1 style="visibility: hidden; font-size: 25px;"><?=get_option(!empty(IS_SITE_LANG_EN) ? "blogh1en" : "blogh1ru")?></h1>
-			<?php
+      <?php }
+
 			/**
 			 * generate_inside_container hook.
 			 *

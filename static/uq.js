@@ -71,23 +71,36 @@ function imgSprite($) {
     var host = $(this).attr("data-sprite-host");
     var x = $(this).attr("data-sprite-x") - 0;
     var y = $(this).attr("data-sprite-y") - 0;
-    var type = $(this).prop('nodeName');
+
 
     var iPlaceW = $(this).attr("data-sprite-space-w") - 0;
     var iPlaceH = $(this).attr("data-sprite-space-h") - 0;
     var realElemW = $(this).width() - 0;
 
-    var procPlaceW = proc = (realElemW / (iPlaceW / 100));
-    var procPlaceH = (iPlaceH * (procPlaceW / 100));
-    procPlaceW = (iPlaceW * (procPlaceW / 100));
+
+    var obPercents = {
+      width: (width / 100),
+      height: (height / 100),
+      posSpriteX: (x / 100),
+      posSpriteY: (y / 100),
+      widthSprite: (iPlaceW / 100),
+      heightSprite: (iPlaceH / 100),
+      ratio: 100
+    };
+
+    var p = obPercents.ratio;
     if (host) {
       url = "//" + host + url;
     }
-    $(this).css({
-      "background": "url(" + url + ") no-repeat " + (x * (proc / 100)) + "px -" + (y * (proc / 100)) + "px",
-      "backgroundSize": '100% auto'
-    });
 
+    if (realElemW < width && realElemW > 50) {
+      p = Math.ceil(obPercents.ratio = (realElemW / obPercents.width));
+    }
+    $(this).css({
+      "background": "url(" + url + ") no-repeat " + 0 + "px -" + (obPercents.posSpriteY * p) + "px",
+      "backgroundSize": (obPercents.widthSprite * p) + 'px ' + (obPercents.heightSprite * p) + "px",
+      "height": (obPercents.height * p)+"px"
+    });
   });
 }
 

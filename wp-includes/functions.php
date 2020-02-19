@@ -7,13 +7,6 @@
 
 require( ABSPATH . WPINC . '/option.php' );
 
-
-
-add_filter('the_content', 'my_filter_function');
-function my_filter_function($content){
-  return $content."<!-- mishanin test -->";
-}
-
 /**
  * Convert given MySQL date string into a different format.
  *
@@ -7412,6 +7405,12 @@ function wp_fuzzy_number_match( $expected, $actual, $precision = 1 ) {
 
 function mishanin_resizeImage($sPath, $newWidth, $newHeight)
 {
+  if (!is_dir($_SERVER["DOCUMENT_ROOT"] . "/wp-content/cache/resizer/")) {
+    if (!mkdir($_SERVER["DOCUMENT_ROOT"] . "/wp-content/cache/resizer/", 0777)) {
+      echo "error: created dir";
+      exit();
+    };
+  }
   $arURL = parse_url($sPath);
   $sPathOrg = $arURL["path"];
   $arURL = explode("/", $arURL["path"]);

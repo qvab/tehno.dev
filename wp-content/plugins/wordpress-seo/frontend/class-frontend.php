@@ -1314,7 +1314,13 @@ class WPSEO_Frontend {
 		 *
 		 * @api string $metadesc The description sentence.
 		 */
-        $metadesc = "All you want to know about tools & home improvement. Interesting articles and reviews."; // TODO mishanin
+		// todo mishanin correction description
+    if (!empty(is_home()) && !empty(IS_SITE_LANG_EN)) {
+      $metadesc =  "All you want to know about tools & home improvement. Interesting articles and reviews.";
+    }
+
+
+
 		$this->metadesc = apply_filters( 'wpseo_metadesc', trim( $metadesc ) );
 	}
 

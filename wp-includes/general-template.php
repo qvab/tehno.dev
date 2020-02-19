@@ -724,7 +724,7 @@ function get_bloginfo( $show = '', $filter = 'raw' ) {
 			$output = site_url();
 			break;
 		case 'description':
-			$output = $isLandEn ? get_option('blogdescription_en') : get_option('blogdescription'); // todo mishanin
+			$output = empty(IS_SITE_LANG_EN) ? get_option('blogdescription_en') : get_option('blogdescription'); // todo mishanin
 			break;
 		case 'rdf_url':
 			$output = get_feed_link( 'rdf' );

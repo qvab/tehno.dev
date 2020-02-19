@@ -92,7 +92,7 @@ class UQGenerateSprite
 
   private function replaceContent()
   {
-    /*
+/*
     vd($this->iPlaceHeightAlpha);
     vd($this->iPlaceHeight);
 */
@@ -103,6 +103,7 @@ class UQGenerateSprite
         . '" data-sprite-width="' . $v["width"]
         . '" data-sprite-height="' . $v["height"]
         . '" data-sprite-host="' . $this->sHost
+        . '" data-sprite-type="' . ($v["height"] > 100 ? "background" : "alpha")
         . '" data-sprite-space-w="' . ($v["height"] > 100 ? $this->iPlaceWidth : $this->iPlaceWidthAlpha)
         . '" data-sprite-space-h="' . ($v["height"] > 100 ? $this->iPlaceHeight : $this->iPlaceHeightAlpha)
         . '"' . ($v["keyMatch"] == 0 ? "data-sprite-type='0' src='/static/loader-trans.gif'" : "data-sprite-type='1' style='background-image(/static/loader-trans.gif); background-size: contain;'");
